@@ -14,21 +14,26 @@
 * Chain Rule
 
 
-## Formular Searches
+## Formular Searches
 
-* Sigmaa/Sumnation: summation 1, k=1..K, t=1..T
-* 
+* **Sigmaa/Sumnation:** summation 1, k=1..K, t=1..T
+* **Limit:** lim (sin x - x)/x^3 as x->0
+* **Product Notation:** 1n(product e^k, k=1..K)
+* **Cos Θ:** = Adjacent / Hypotenuse
+
 
 ## Key words
 
 * **Points:** A data point
 * **Vector:** A line from the origin to a data point
 * **Origin:** The n 0's of any dimentional graph
-* **Norm:** Using Euclidean distance the norm will be the √ of all of the vectors items.
+* **Norm:** Length of a vector. Using Euclidean distance the norm will be the √ of all of the vectors items.
 * **Euclidean Distance:** The "ordinary" straight-line distance between two points
 * **Dot Product:** How the vectors are arranged relative to each other
 * **plane:** A slice through n dimensions. All the points that fit on the slice
 * **hyperplane:** n-1 dimensions. A subspace whose dimension is one less than that of its ambient space. If a space is 3-dimensional then its hyperplanes are the 2-dimensional planes, while if the space is 2-dimensional, its hyperplanes are the 1-dimensional lines.
+* **orthogonal:** perpendicular. the vecors are orthogonal iff their lengths are 0 (𝜋/2)
+* **Unit Vector:** is a vector of length 1
 
 
 
@@ -37,7 +42,7 @@
 * Data points will be written as [3,2,2]. The coordinates of the plotted data point
 * A vector, x. The data points are all of it's coordinates
 ```
-Vector:
+Point or Vector:
      _
     |3|
 x = |2|
@@ -47,6 +52,11 @@ x = |2|
 * To get the index of a dimension, xi, we write it like this x1 which will = 3 in the above example.
 * Adding vector together. The distance between 2 vectors (A, B), distance = (C) will be: A+C = B, C = B-A
 * Vector size: Find the vector size using the norm (The √ of all of the vector items)
+* The angle between two vectors: FInd the vector sizes. Next find the dot poduct of the vectors. Next, find theta (ϴ) which is the inverse of cos so:
+```
+ ϴ = cos⁻¹(dot product / the product of the lengths)
+eg. cos⁻¹(0 / √0.25 * √0.0175) = 90
+``` 
 * Dot product: How the eliments are arranged relative to each other. We can find that by multiplying the relative data points:
 ```
 The dot product (algerbraic):
@@ -65,6 +75,21 @@ where  𝛼  is the angle formed between the vectors  𝑎  and  𝑏  in  𝑛 
 Geometric version: x*y = |x|(norm) |y|(norm) * cosign (cos) of the angle between them
 ``` 
 
+* **orthogonal vectors:** to find if two vectors are orthogonal, first find their dot product and if that = 0 (𝜋/2)  it's orthogonal 
+```
+        __          ____
+       |a1|        | a1 |
+x(1) = |a2| x(2) = |-a2 |   
+       |a3|        | a3 |
+       ---          ---- 
+The dot product is x1(a1) * x2(a1) x1(a2) * x2(-a2) * x1(a3) * x2(a3)
+It is orthogonal when 
+
+```
+* **Unit vectors:** Unit vectors are of length 1. The length of a vector is also called its norm. To find the unit vector in the same direction as a vector, we divide it by its magnitude:
+```
+x / norm(x)
+```
 
 ## Planes
 
