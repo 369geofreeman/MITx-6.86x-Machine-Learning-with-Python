@@ -108,6 +108,15 @@ x / norm(x)
 X = offset
 ```
 
+#### Hyperplane
+
+
+* A hyperplane in  𝑛  dimensions is a  𝑛−1  dimensional subspace
+* In general, a hyperplane in  𝑛 -dimensional space can be written as  𝜃0+𝜃1𝑥1+𝜃2𝑥2+⋯+𝜃𝑛𝑥𝑛=0.  For example, a hyperplane in two dimensions, which is a line, can be expressed as  𝐴𝑥1+𝐵𝑥2+𝐶=0 .
+
+
+
+
 #### Find all of the points that fall on the plane:
 
 * Take another point, defined as P. 
