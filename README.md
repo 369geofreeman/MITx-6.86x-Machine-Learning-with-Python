@@ -106,6 +106,19 @@ It is orthogonal when
 x / norm(x)
 ```
 
+* **Vector Outer product:** The outer product of two vectors produces a matrix:
+```
+       |x¹|
+xyᵀ =  |x²|  [y¹, y², y³]
+       |x³|
+
+       |x¹y¹  x¹y²  x¹y³|
+    =  |x²y¹  x²y²  x²y³|
+       |x³y¹  x³y²  x³y³|
+```
+
+
+
 ## Planes
 
 <img src="img/Plane_1001.gif" alt="Neural Network" width="500"/>
