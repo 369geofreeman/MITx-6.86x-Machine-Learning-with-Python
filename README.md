@@ -22,6 +22,21 @@
 * **Cos Θ:** = Adjacent / Hypotenuse
 
 
+## LA / statistics of ML
+
+* **Probability density function (PDF):** The probability density function is defined in the form of an integral of the density of the variable density over a given range. It is denoted by f (x). This function is positive or non-negative at any point of the graph and the integral of PDF over the entire space is always equal to one.
+
+* **Gaussian distribution:** The univariate Gaussian distribution (or "normal distribution," or "bell curve") is the distribution you get when you do the same thing over and over again and average the results.
+- It's formular is:
+```
+        1     (  (x-μ)² )
+p(x) = --- exp|- -----  |
+      σ√2π    (  2σ²    )
+
+
+```
+
+
 ## Key words
 
 * **Points:** A data point
