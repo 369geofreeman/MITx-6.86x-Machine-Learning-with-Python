@@ -12,7 +12,7 @@
 * Loss Function
 * Gradient Decent
 * Chain Rule
-
+* Matrices
 
 ## Formular Searches
 
@@ -161,6 +161,53 @@ Any point that saitifies this linear relationship is on this plane
 # Chain Rule
 
 * The chain rule is a formula to compute the derivative of a composite function
+
+
+# Matrices
+
+
+* **Find the product:** 
+```
+Produuct of a matrix by a single number:
+* Times each number in the matix by teh scalar
+
+ 	|2, 3, 6|   |4, 6, 12|
+  2 * = |4, 5, 6| = |8, 10, 12|
+        |3, 6, 9|   |6, 12, 18|
+
+
+Product of a matrix and a matrix:
+* Do the dot product for each row of A onto each column of B
+
+    |1, 2, 3|	  [7, 8]	     [58, 64]
+A = |4, 5, 6| B = [9, 10]   result = [139, 154]
+		  [11, 12]
+so:
+    1x7 + 2x9 + 3x11 = 58
+    1x8 + 2x10 + 3x 12 = 154
+    4x7 + 5x9 + 6x11 = 139
+    4×8 + 5×10 + 6×12 = 154
+
+```
+* **When we do multiplication:**
+
+The number of columns of the 1st matrix must equal the number of rows of the 2nd matrix.
+And the result will have the same number of rows as the 1st matrix, and the same number of columns as the 2nd matrix.
+
+
+<img src="img/matrices.png" alt="Matrix multiplication img" width="500"/>
+<hr />
+
+
+* **Find the Rank for a matrix:** The rank of a matrix is the number of linearly independent rows or columns.First get the measurement row times column (n times n if square, n times m if not square). Reduce matrix to reduced row echelon form 
+
+* **Zero Matrix:** A zero matrix or null matrix is a matrix all of whose entries are zero.
+
+* **Identity Matrix** An Identity matrix of size n is the n × n square matrix with ones on the main diagonal and zeros elsewhere.
+
+
+
+
 
 
 
