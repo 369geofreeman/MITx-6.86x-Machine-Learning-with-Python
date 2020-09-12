@@ -22,4 +22,60 @@ Given a  𝑑 -dimensional vector  𝜃  and a scalar offset  𝜃0  which descr
 
 Answer = 
 
+# Orthogonality Check
+
+To check if a vector  𝑥  is orthogonal to a plane    characterized by  𝜃  and  𝜃0 , we check whether
+
+𝑥=𝛼𝜃 for some 𝛼∈ℝ
+
+
+# Perpendicular Distance to Plane
+
+Given a point  𝑥  in  𝑛 -dimensional space and a hyperplane described by  𝜃  and  𝜃0,  find the signed distance between the hyperplane and  𝑥 . This is equal to the perpendicular distance between the hyperplane and  𝑥 , and is positive when  𝑥  is on the same side of the plane as  𝜃  points and negative when  𝑥  is on the opposite side.
+
+(Enter theta_0 for the offset  𝜃0 .
+Enter norm(theta) for the norm  ‖𝜃‖  of a vector  𝜃 .
+Use * to denote the dot product of two vectors, e.g. enter v*w for the dot product  𝑣⋅𝑤  of the vectors  𝑣  and  𝑤 . )
+
+Answer = 
+
+
+# Orthogonal Projection onto Plane
+
+Find an expression for the orthogonal projection of a point  𝑣  onto a plane    that is characterized by  𝜃  and  𝜃0 . Write your answer in terms of  𝑣 ,  𝜃  and  𝜃0 .
+
+(Enter theta_0 for the offset  𝜃0 .
+Enter norm(theta) for the norm  ‖𝜃‖  of a vector  𝜃 .
+Use * to denote the dot product of two vectors, e.g. enter v*w for the dot product  𝑣⋅𝑤  of the vectors  𝑣  and  𝑤 . )
+
+Answer = 
+
+
+# Perpendicular Distance to Plane
+
+
+Let  1  be the hyperplane consisting of the set of points  𝑥=[𝑥1𝑥2]  for which  3𝑥1+𝑥2−1=0 . (Note that this hyperplane is in fact a line, since it is 1-dimensional.)
+
+What is the signed perpendicular distance of point  𝑎=[−1,−1]  from  1 ?
+
+Answer = 
+
+What is the signed perpendicular distance of the origin from  1 ?
+
+Answer = 
+
+What is the orthogonal projection of point  𝑎=[−1,−1]  onto  𝑝1 ?
+
+First coordinate:
+
+Second coordinate:
+
+
+
+
+
+
+
+
+
 
