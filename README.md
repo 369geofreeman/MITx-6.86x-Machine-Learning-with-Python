@@ -1,5 +1,10 @@
 # MITx-6.86x Machine Learning with Python
 
+## Chapters
+
+#### Unit One: Linear Classifiers and generalisations
+  * [Lecture One: Introduction to Machine Learning](https://github.com/369geofreeman/MITx-6.86x-Machine-Learning-with-Python/tree/master/week_1/lecture_1)
+
 
 ## Notes (cmd+f cheatsheet)
 
