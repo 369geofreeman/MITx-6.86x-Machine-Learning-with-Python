@@ -392,7 +392,7 @@ So we improve genrelisation when we constrain H, ie we only allow our classifier
 Put another way the more complex set of classifiers we consider, the less likely we are to generalise.
 
 
-#### Supervised LEarning: Revisited
+#### Supervised Learning: Revisited
 
 now in the next lecture we will continue our journey to explore the classifier and see how we constrain our classifier to a familyt of linear function. But before that we need to see that this idea of function h() can be used to solve many problems like
 
