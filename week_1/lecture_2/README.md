@@ -167,7 +167,7 @@ In order to anaalyse what happened geoetrically, we took
 Althought we have talked a lot about how we plan to classify or predict teh labels, we haven't yet proposed any mathmatical form for the function h(), that is our classifier. In our lecture now, we plan to do exactly that, and we will start with the simplest family called the **Linear Classifier**. But in order to clearly understand them, we will need a mathmatical concept called hyperplane, so....
 
 
-## HYPERPLANE
+## HYPERPLANE  (Then back to the lecture)
 
 
 ### Lets begin with a simple case
@@ -250,7 +250,7 @@ Now we have 3 axis here, 𝒳₁, 𝒳₂ and 𝒳₃. This is what we call a 3r
 
 The equasion of the plane is of form
 ```
-	a𝒳₂ + b𝒳₂ + c𝒳₃ = d
+	a𝒳₁ + b𝒳₂ + c𝒳₃ = d
 ```
 
 And we can again see the pattern continued here
@@ -273,28 +273,211 @@ Note that there will also be points that tie exactly on the plane and will satif
 ### So Now we cant go visually further
 
 
+Because there's no way we can draw a 4d plot, But we can mathmatically translate this idea forward. before doinf that lets look at the similarites we had for our 3 examples above
+
+Equation of:
+	* Point in one dimension:    𝒳₁ - 𝒳₂ = 0 
+	* Line in two dimensions:    𝒳₂ - m𝒳₁ - c = 0
+	* Plane in three dimensions: a𝒳₃ + b𝒳₂ + c𝒳₁ - d = 0
+
+So we can say if we have a dimensional sopace in general, the equasion we are looking for is off the form
+```
+	𝜣₁𝒳₁ + 𝜣₂𝒳₂ + 𝜣₃𝒳₃ + ........ + 𝜣ⅾ𝒳ⅾ + 𝜣ｏ = 0
+``` 
+
+Also note the following:
+
+	in 1 dimension : dimension of point is 0
+	in 2 dimension : dimension of point is 1
+	in 3 dimension : dimension of point is 2
+
+So if we are in a d dimensional space we will have the above equation as a 'd-1' dimensional thing / obgect
+
+**Now a finall thing to note ie**
+
+No matter which dimension d, we choose, teh equasion we wrote before divides the d dimensional space into **TWO** seperate regions and there are also points taht lie on the object that satisfy the equasion we wrote earlier. Ie, 𝜣₁𝒳₁ + 𝜣₂𝒳₂ + 𝜣₃𝒳₃ + ........ + 𝜣ⅾ𝒳ⅾ + 𝜣ｏ = 0
+
+We are now ready to understand the concept of:
+
+
+### Hyperplane
+
+
+* A hyperplane in n dimensions is a n-1 dimensional subspace.
+* A hyperplane seperates the space into two sides
+* The equasion of a hyperplabe is:
+```
+	𝜣ｏ+ 𝜣₁𝒳₁ + 𝜣₂𝒳₂ + 𝜣₃𝒳₃ + ........ + 𝜣n𝒳n = 0
+```
+
+𝜣ｏ: is called the offset term
+
+Linear algebra  provides us a great way to write the equation:
+```
+If we take
+
+	    |𝜣₁ |	   |𝒳₁ |
+	𝜣 = |𝜣₂ |  And 𝒳 = |𝒳₂ |
+	    | ┊ |          | ┊ |
+	    |𝜣∩ |nx1       |𝒳∩ |nx1
+```
+
+Then we use the dot product (𝜣ᵀx or 𝜣﹒x) to write the eqation of the hyperplane as
+```
+	𝜣ｏ+ 𝜣﹒x = 0
+```
+
+
+Now in light of this new formulation, lets look at our old examples
+
+	* Point in one dimension:    𝒳₁ - 𝒳₂ = 0 ; 𝜣₁𝒳₁ + 𝜣ｏ= 0  ⟹  𝜣₁ = 1. 𝜣ｏ= -𝒳₀
+	* Line in two dimensions:    𝒳₂ - m𝒳₁ - c = 0  ; 𝜣₂𝒳₂ + 𝜣₁𝒳₁ + 𝜣ｏ = 0 ⟹  𝜣₁ = -m, 𝜣ｏ= -c
+	* Plane in three dimensions: a𝒳₃ + b𝒳₂ + c𝒳₁ - d = 0 ; 𝜣₃𝒳₃ + 𝜣₂𝒳₂ + 𝜣₁𝒳₁ + 𝜣ｏ= 0
+					ie, 𝜣₁ = c, 𝜣₂ = b, 𝜣₃ = a. 𝜣ｏ= -d
+
+
+Now one more thing before we end this topic
+
+
+Lets first see the case of line in 2d 
+
+
+The eqation of line is 𝜣₁𝒳₁ + 𝜣₂𝒳 + 𝜣₂ = 0
+
+
+<img src="img/img8.png" alt="future events  img" width="600"/>
+
+
+<img src="img/img9.png" alt="future events  img" width="600"/> 
+
+
+Which menas any vector thats along the direction of AB is pependicular 𝜣 vector.
+
+Similary for the case of plane in 3d we have
+
+<img src="img/img10.png" alt="future events  img" width="600"/>
+
+Therefore we can conclude for a hyperplane in n dimensions with equation
+```
+	𝜣ｏ+ 𝜣₁𝒳₁ + 𝜣₂𝒳₂ + ..... +  𝜣n𝒳n = 0
+
+Or
+
+	𝜣ｏ+ 𝜣﹒x = 0
+```
+
+The vector 𝜣 will be orthagonal to any vector that lies on this hyperplane, ie lives in the subspace defined by the hyperplane
+
+
+
+Now back to the lecture
+
+
+
+## Linear Classifiers
+
+Ok now we are ready to study our first linear classifier mathmmatically. And the problem we had in  mind is the movie recommender, where a movie from a test data set will be assigned either a +1 or -1 label.
+
+We already know what a classifier does for our problem. It divides the space where 𝒳 ∈ ℝᵈ live into two regions. (For our example we had the blue region and the white region)
+
+But the study of hyperplanes earlier, revealed that it too does the same thing. A hyperplane in n dimensionsis a n-1 dimensional subspace that divides the n dimensional space into two regions.
+
+So as our first classifier, why don't we use the help of a hyperplane in order to find our classifier h()?
+
+And we will indeed do exactly that. We will now tackle the movie recommender problem, using hyperplane's help in forming a classifier.
+
+Now note that a hyperplane is actually just a line, when we are in 2 dimensional space. We decided earlier to keep things simple, that the feature vector for the ith movie 𝒳⁽ⁱ⁾ will have two features ie, 𝒳⁽ⁱ⁾ ∈ℝ² so our hyperplane will be a line in our example.
+
+However the mathmatical formulation that we will use or derive will be applicable for any problem of two-class classification, with a general feature vector 𝒳⁽ⁱ⁾ ∈ ℝᵈ
+
+We may not be able to visualise it when d > 3 but the mathematical ideas will remain the same
 
 
 
 
+## The idea
+
+we have 𝒳⁽ⁱ⁾ ∈ ℝ². Ie, the feature vectors are 2 dimensional. So we need to divide the ℝ² plane in 2 regions, using a line
 
 
+<img src="img/img11.png" alt="future events  img" width="600"/>
+
+Now the general equation of a line is 
+```
+	𝜣₁𝒳₁ + 𝜣₂𝒳₂ + 𝜣₀ = 0
+```
+
+This line here is called the **DECISION BOUNDRY**. A common machine learning term.
+
+In general d dimensions of the hyperplane will be called the decision boundry.
+
+Ok, now in order to carry our analysis forward, we will first simplify the math a bit. We will let the desision boundry pass through the origin.
 
 
+ <img src="img/img12.png" alt="future events  img" width="600"/>
+
+We will later see the general case but first lets see this one
+
+If that is the case then point (0,0) should satisfy the equation. 
+```
+	Ie, 𝜣₁﹒0 + 𝜣₂﹒0 + 𝜣₀ = 0
+
+	⟹  𝜣₀ = 0
+```
+So the odffset term 𝜣₀ is 0
+
+The equation of the line becomes
+```
+	𝜣₁𝒳₁ + 𝜣₂𝒳₂ = 0
+```
+
+Decission boundry passing through the origin
 
 
+###  Now lets move a step further
+
+Now we want to look at the vector 𝜣. As we know that vector 𝜣 is orthagonal to the hyperplane (line in this case).
+The real direction of 𝜣 will become clear when we actually know the numerical values of its components. But for nowwe have two choices, we can either choose option A or option B. We choose option A (either A or B it doesn't matter).
+
+<img src="img/img13.png" alt="future events  img" width="500"/>
+
+But note that these two directions are the only choices we have as these are the only directions orthagonal to the lline.
+
+<img src="img/img14.png" alt="future events  img" width="700"/>
 
 
+**Img 1**
+
+Here we see two vectors that lie on region. By definition of the dot product
+
+	0﹒x = ||0|| ||x|| cos(< bw the two)
+	0﹒x = ||0|| ||x⁽¹⁾|| cos 1
+	0﹒x = ||0|| ||x⁽²⁾|| cos 2
+
+As long as the vector x lies in region. The angle between will be between 0 to ∏/2 therefore
+```
+	𝜣﹒x > 0 for all x in region 1
+```
+
+<hr/>
+
+**Img 2**
+
+Here we see two vectors that lie on region 1. By definition of the dot product
+
+	0﹒x = ||0|| ||x|| cos(< bw the two)
+	0﹒x⁽³⁾ = ||0|| ||x⁽³⁾|| cos 3
+	0﹒x⁽⁴⁾ = ||0|| ||x⁽⁴⁾|| cos 4
+
+As long as the vector  x lies in region 2. The angle between will be between ∏/2 to ∏ therefore
+```
+	𝜣﹒x < 0 for all x in region 2
+```
 
 
+So now we have a new insight
 
-
-
-
-
-
-
-
+We had the decission boundry 𝜣﹒x = 0 passing through origin and we know that it derives the space into two regions.
 
 
 
