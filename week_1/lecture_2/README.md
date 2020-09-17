@@ -222,11 +222,15 @@ We can write this as
 
 
 But we again note a pattern here.  The Blue line divides the 2nd plane into two regions
+
 	* Region 1 : Above the line
 	* Region 2 : Below the line
 
 
 <img src="img/img4.png" alt="future events  img" width="600"/>
+
+
+<img src="img/img5.png" alt="future events  img" width="600"/>
 
 	* x : Points above the line
 	* o : Points below the line
@@ -234,13 +238,10 @@ But we again note a pattern here.  The Blue line divides the 2nd plane into two 
 Note that there will also be points exactly on the line
 
 
-<img src="img/img5.png" alt="future events  img" width="600"/>
-
-
 Good now lets us move on to the next case
 
 
-### Let's complicate this a little more
+### Let's complicate this a little more
 
 
 Now we have 3 axis here, 𝒳₁, 𝒳₂ and 𝒳₃. This is what we call a 3rd plane. We also have a plane (in blue) And we again can ask the question what is the equasion of this plane.
@@ -269,7 +270,7 @@ Note that there will also be points that tie exactly on the plane and will satif
 
 
 
-### So Now we cant go visually further
+### So Now we cant go visually further
 
 
 
