@@ -478,7 +478,11 @@ As long as the vector  x lies in region 2. The angle between will be between ∏
 So now we have a new insight
 
 We had the decission boundry 𝜣﹒x = 0 passing through origin and we know that it derives the space into two regions.
+The vectors that lie on the side towards which 𝜣 points will have a dot product ie, 𝜣﹒x > 0 for x along  𝜣's side
 
+The vectors that lie on the side towards opposite to which 𝜣 points will have a negative dot product, ie 𝜣﹒x < 0 for x opposite to 𝜣's direction.
+
+With this insight we can develope a classifier as follows
 
 
 
