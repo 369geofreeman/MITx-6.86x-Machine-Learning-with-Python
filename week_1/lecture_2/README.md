@@ -877,7 +877,7 @@ The real trick is in updating 𝜣₀. For this we will think of our problem as 
 
 The algorithm look slike this:
 
-<img src="img/img32.png" alt="future events  img" width="700"/>
+<img src="img/32.png" alt="future events  img" width="700"/>
 
 
 This brings us to the end of the lecture
