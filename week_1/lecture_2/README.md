@@ -11,16 +11,16 @@
 * Use the perceptron algorithm with and without offseti
 
 
-## Review of basic concepts
+## Review of basic concepts
 
-Lets start this lecture by briefly revising concepts from teh previous lecture
+Lets start this lecture by briefly revising concepts from the previous lecture
 
 
-### Feature Vector: 𝒳
+### Feature Vector: 𝒳
 
-Foe each and every case that we had, we had some propertie staht were inherent to the case. Like for eg. Every movie that we had earlier had a genre, Imdb rating, budget, cast etc.
+Foe each and every case that we had, we had some properties that were inherent to the case. Like for eg. Every movie that we had earlier had a genre, Imdb rating, budget, cast etc.
 
-We, for our purpose, wanted to redict something on the basis iof these features. Hence for each case we chose 'd' features taht we were characteristic of that case and stacked them in a vector with each entry being a number (because taht's what machines understand).
+We, for our purpose, wanted to redict something on the basis of these features. Hence for each case we chose 'd' features thar we were characteristic of that case and stacked them in a vector with each entry being a number (because that's what machines understand).
 
 This vector for the ith movie/case was called the feature vector:
 ```
@@ -484,10 +484,403 @@ The vectors that lie on the side towards opposite to which 𝜣 points will have
 
 With this insight we can develope a classifier as follows
 
+* We need a classifier h such that
+```
+	h : ℝ² ⟹  {+1, -1}
+```
+* Ie, it should give output +1 or -1
+* Why don't we just take the sign of the innerproduct 𝜣 ﹒x for a vector x lying in ℝ²
+```
+	h(x;𝜣) = sign(𝜣 ﹒x)
+```
+* This is equivalent to saying that h classifies all vectors in region 1 as +1 and region 2 as -1
+
+<img src="img/img15.png" alt="future events  img" width="700"/>
+
+
+So to conclude
+```
+	Decission Boundry 𝜣 ﹒x = 0
+	Classifier: h(x;𝜣) = sign(𝜣 ﹒x)
+```
+
+Now here we will see a degree of freedom that we still have
 
 
 
+## A degree of freedom unused
 
+Now look at the expression of the decission voundry
+```
+	𝜣 ﹒x = [𝜣₁ 𝜣₂]|X₁| = 𝜣₁X₁ + 𝜣₂X₂ = 0
+                       |X₂|
+```
+What happens if I change 𝜣 to say 25𝜣?
+```
+	𝜣 ﹒X = [25𝜣₁, 25𝜣₂]|X₁| = 25(𝜣₁X₁ + 𝜣₂X₂)
+                            |X₂|
+
+				⟹    𝜣₁X₁ + 𝜣₂X₂ = 0
+```
+
+
+
+Which menas the equation of decvision boundry is still the same and this is not true only for 25𝜣 but any c𝜣 where c ∈ℝ.
+
+The point here is as long as 𝜣 is replaced by some multiple of 𝜣, the decission boundry remains the same.
+
+This is also true for the classifier
+```
+	h(X;𝜣) = sign(𝜣 ﹒X)
+```
+if c is some real positive number then
+```
+	h(X;c𝜣) = sign(c𝜣 ﹒X) = sign(𝜣 ﹒X) = h(X;𝜣)
+```
+
+So all mathematical formulation we saw until now will not get affected if we use 𝜣 of c𝜣 where c ∈ ℝ+
+
+This is a degree of freedom we have , ie we are free to choose any positive multiple of 𝜣, and our decission boundry and classifier will remain the same
+
+But note that if 𝜣 is replaced by c𝜣 ﹒The norm of vector change
+```
+ie 
+	||𝜣|| = √𝜣₁² + 𝜣₂²
+	
+	||c𝜣|| = √c²𝜣₁² + c²𝜣₂² = |c| ||𝜣||
+```
+
+So the additional degree of freedom we have relates to the norm of the 𝜣 vector, which we havent fixed up until now.
+
+We will later see in lecture 3 that this norm will help us to form what is called large margin classifiers. But thats later
+
+First lets generalise for the case of any line and not just the line passing through the origin.
+
+
+### The general case 𝜣₀ ≠ 0
+
+
+If you don't wnat to be bothered with some redious calculation you can skip this part and, assume yourself that the classifier for this case will be similary defined, but if you're curious heres whats happening
+
+<img src="img/img16.png" alt="future events  img" width="700"/>
+
+* The equation of the line is 𝜣₁X₁ + 𝜣₂X₂ + 𝜣₀ = 0
+* We for some reason want to find the distance of origin to the line
+* We draw a vector starting from origin and ending at the line, orthagonal to the line
+* If it's orthagonal to the line this can be written as ℷ->𝜣 (lim)
+* So point A or -> = ℷ->𝜣 where ℷ∈ℝ
+* This means 0->A = ℷ->𝜣 = [ℷ𝜣₁, ℷ𝜣₂]ᵀ
+* If point A lies on the line then it must satisfy its equation therefore 𝜣₁(ℷ𝜣₁) + 𝜣₂(ℷ𝜣₂) + 𝜣₀ = 0
+* From here we find ℷ = -𝜣₀/𝜣₀₁² + 𝜣₂² = -𝜣₀/||->𝜣||²   ----(A)
+* SO the perpenducular distance of the origin(0,0) from line is ||->0A|| = ||ℷ->𝜣|| = ||->𝜣|| = |𝜣₀|/||->𝜣||   ------(B)
+* Now we note due to our construction 𝜣₀ is negative because ℷ->𝜣 can only  be along ->𝜣's direction if ℷ is possitive, otherwise it will be to the opposite direction.
+```
+And we found 
+		ℷ = -𝜣₀/||->𝜣||² ⟹  𝜣₀ is negative
+```
+
+
+* Now everything is ready lets look at
+```
+	->𝜣 ﹒->X + 𝜣₀
+```
+We know ->𝜣 ﹒->X = ||->𝜣|| ||->X|| cos <, so above equasion becomes
+```
+	||->𝜣|| ||0->X|| cos< + 𝜣₀	; Lets take ||->𝜣|| outside
+
+	||->𝜣|| (||->𝜣||cos< + 𝜣₀ / ||->𝜣||
+
+```
+
+We also know 𝜣₀ is negative due to our construction so we can write it as -|𝜣₀|
+
+* So ->𝜣 ﹒->X + 𝜣₀ finally becomes
+```
+	||->𝜣|| (||->X||cos< - |𝜣₀| / ||->𝜣||
+```
+
+
+<img src="img/img17.png" alt="future events  img" width="700"/>
+
+
+So this is 
+```
+	||->X|| cos< : Projection of any vector X along ->𝜣's direction
+
+	|𝜣₀| / ||𝜣|| : Prependicular distance of origin to the line derived before eq(B)
+```
+
+For any vector X in Region 1:
+```
+	||->||cos< > |𝜣₀|/||->𝜣|| therefore sign (->𝜣 ﹒->X + 𝜣₀) > 0
+```
+
+For any vector X in Region 2
+```
+	||->||cos< < |𝜣₀|/||->𝜣|| therefore sign (->𝜣 ﹒->X + 𝜣₀) < 0
+```
+
+Therefore we can generalise our classifier
+```
+	Desision Boundry : 𝜣 ﹒X + 𝜣₀ = 0
+	Classifier h(X;𝜣;𝜣₀) = sign(𝜣 ﹒X + 𝜣₀)
+```
+
+Now we have our first classifier
+
+
+
+## Constraints of our classifier
+
+
+Although we have a classifier, this does not mean we can classify properly. What I mean to say is , the linear classifier that we made just now is nothing more than a line in 2d.
+Why would it solve every problem of two-category classification that we throw at it?
+
+The point here is there is a small category of problems that our linear classifier above could tackle properly.
+
+If we have our traning data, theres no guarantee that all points would be classified properly. Lets see this visually
+
+**Img 1 and Img2**
+<img src="img/img18.png" alt="future events  img" width="700"/>
+
+**Img 1**
+Here we have some traning data. we see there can be many lines through origin that can classify each point properly.
+
+Some are drawn
+
+**Img 2**
+Here we see some traning data. 
+We see there can bve no line through origin that correctly classifies all the points.
+But there still can be many lines, ie linear classifier that can do our job.
+
+Some are drawn
+
+**Img 3 and Img 4**
+<img src="img/img19.png" alt="future events  img" width="700"/>
+
+**Img 3**
+No matter how hard we try we will never be able to find a line, ie a classifier that classifies all the traning points correctly. And we are just using 4 examples in 2 dimensions here.
+
+**Img 4**
+
+Every possible line we try fails. It's not possible. And this brings us to the topic of linear seperability of a set that we will study next.
+
+
+
+## Linear Seperation
+
+So we saw earlier, that in order to find a classifier that is LINEAR, and classifies ALL the points in the traning set correctly, we will need some condition to be satisfied and that condition is the following:
+
+```
+Definition:
+
+	Traning examples Sn = {(x⁽ⁱ⁾,y⁽ⁱ⁾}), i = 1,....,n} are linearly seperable if there exists a parameter vector 𝜣(hat) and offset parameter 𝜣(hat)₀ such that y⁽ⁱ⁾(𝜣(hat) ﹒x⁽ⁱ⁾ + 𝜣(hat)₀)>0 for all i = 1,.....,n.
+```
+
+Lets understand this properly
+
+First understand this term : y⁽ⁱ⁾ (𝜣(hat) ﹒x⁽ⁱ⁾ + 𝜣(hat)₀)
+
+<img src="img/img20.png" alt="future events  img" width="700"/>
+
+1) (+) :  when feature vector with +1 label lies on the opposite side of desission boundry with 𝜣(hat) vector
+
+* Then : y⁽ⁱ⁾ = +1 ; 𝜣(hat) ﹒x⁽ⁱ⁾ + 𝜣₀ = negative
+* Therefore : y⁽ⁱ⁾ (𝜣(hat) ﹒x⁽ⁱ⁾ + 𝜣₀) < 0 : MISCLASSIFIED
+
+2) (-) : when feature vector with -1 label lies on the opposite side of the dessision boundry with 𝜣(hat) vector
+
+* Then  : y⁽ⁱ⁾ = -1 ; 𝜣(hat) ﹒x⁽ⁱ⁾ + 𝜣₀ = negative
+* Therefore :  y⁽ⁱ⁾ (𝜣(hat) ﹒x⁽ⁱ⁾ + 𝜣₀) > 0 : CORRECTLY CLASSIFIED
+
+
+3) (+) : when feature vector with +1 label lays on the same side of the desission boundry with 𝜣(hat) vector
+
+* Then  : y⁽ⁱ⁾ = +1 ; 𝜣(hat) ﹒x⁽ⁱ⁾ + 𝜣(hat)₀ = Possitive
+* Therefore :  y⁽ⁱ⁾ (𝜣(hat) ﹒x⁽ⁱ⁾ + 𝜣(hat)₀) > 0 : CORRECTLY CLASSIFIED
+
+4) (-) : When the feature vector with -1 label lays on the same side of desision boundry with 𝜣(hat) vector
+
+
+* Then  : y⁽ⁱ⁾ = -1 ; 𝜣(hat) ﹒x⁽ⁱ⁾ + 𝜣(hat)₀ = Possitive
+* Therefore :  y⁽ⁱ⁾ (𝜣(hat) ﹒x⁽ⁱ⁾ + 𝜣(hat)₀) < 0 : MISCLASSIFIED
+
+
+So finally we get the following
+
+* When a vector is MISCLASSIFIED : y⁽ⁱ⁾ (𝜣(hat) ﹒x⁽ⁱ⁾ + 𝜣(hat)₀) < 0
+* When a vector is correctly CLASSIFIED : y⁽ⁱ⁾ (𝜣(hat) ﹒x⁽ⁱ⁾ + 𝜣(hat)₀) > 0
+
+So when in the definition of linear seprability we said
+```
+	y⁽ⁱ⁾ (𝜣(hat) ﹒x⁽ⁱ⁾ + 𝜣(hat)₀) > 0 for all i=1,2,3,....,n
+```
+
+we are saying that the line (or hyperplane) classifies all the points in the traning set correctlyso the definition can be boiled down to :
+
+**DEFINITION**
+
+A set Sn = { (x⁽ⁱ⁾, y⁽ⁱ⁾), i=1,2,3,...,n } are linearly seperable if we can find 𝜣(hat) and 𝜣₀, ie parameter vector and offset parameter that seperate them. ie, if we can find a line that seperates all points correctly that is redundant
+
+And if we look at it closely, it absolutely says nothing at all. it just says you can correctly classify all points using a linear classifier if you can find a linear classifier that can do that.
+
+But thuis definition is needed for the next algorithm that we are about to  see called the perceptron, which relies on the fact that a solution will be found for 𝜣(hat) vector and 𝜣₀ offset parameter on if Sn i slinearly seperable. 
+But forst lets calculate traning error in this case
+
+
+
+## Traning Error for Linear Classifier
+
+we earlier defined traning error as the fraction of points in the traning set that were misclassified. here fior the case of linear classifier we can say that
+```
+	h(x⁽ⁱ⁾) = 𝜣 ﹒x⁽ⁱ⁾ + 𝜣₀
+``` 
+We also figured out that irrespective of the label {+1 or -1} 
+```
+if
+	y⁽ⁱ⁾(𝜣 ﹒x⁽ⁱ⁾ + 𝜣₀) > 0 then point is correctly classified
+	y⁽ⁱ⁾(𝜣 ﹒x⁽ⁱ⁾ + 𝜣₀) < 0 then point is missclassified
+```
+
+we will also consider this case as an error because we really don't know how to classify it.
+
+If you remember the [[ ]] double bracket notation we had
+```
+	[[EXPRESION]] = 1 if expression true
+			2 if expression False
+```
+
+For all errors
+```
+	y⁽ⁱ⁾(𝜣 ﹒x⁽ⁱ⁾ + 𝜣₀) ≦ 0 will be true
+```
+
+Therefore we can write
+
+<img src="img/img21.png" alt="future events  img" width="700"/>
+
+Now we will finally see the perception algorithm that finds a linear classifier, if one exists.
+Ie, it will find a classifier if the traning set Sn that we have is lineraly seperable. This will  not be a unique classifier as there may be many other LINEAR classifiers that can accomplish this job.
+
+Lets see it
+
+
+## Perceptron
+
+Instead of laying the algorithm on you, we would rather see how it comes to us geometrically. Now note that we are here in search of a line, but it is totally decided, once we have vetor 𝜣
+
+Also note that we will seethe caseof line passing through origin, just for simplicity.
+
+Also in prder for this algorithm to be successful, we need linearly sseprable data, ie we will need points that can be divided/classified by a line
+
+The plane/line/decision boundry will be perpendicular to the 𝜣 vector always.
+
+Let us begin
+
+
+<img src="img/img22.png" alt="future events  img" width="700"/>
+
+<img src="img/img23.png" alt="future events  img" width="700"/>
+
+<img src="img/img24.png" alt="future events  img" width="700"/>
+
+<img src="img/img25.png" alt="future events  img" width="700"/>
+
+
+We can also see that the new point x⁽⁵⁾ is not correctly classified according to the current ->𝜣. So we will have to update it.
+
+Now just forget for one second verything up until now and answer this. What would ->𝜣 be if only point x⁽⁵⁾ existed?
+
+the answer is it would have been a vector from origin to x⁽⁵⁾ but with a negative sign because we wont feature vectors with label -1 to point away from them so
+```
+	->𝜣 would have been y⁽ⁱ⁾ ﹒x⁽ⁱ⁾ or y⁽⁵⁾ ﹒x⁽⁵⁾ if there was only one point x⁽⁵⁾
+```
+
+Now we come back to the problem. the algorithm says 
+
+<img src="img/img26.png" alt="future events  img" width="500"/>
+
+Ie, the algorithm says to find the new vector
+
+New 𝜣 vector = Old theta vector that classified previous points correctly + new 𝜣 vector that classifies the new point correctly, if the new vector was alone
+
+
+<img src="img/img27.png" alt="future events  img" width="700"/>
+
+
+## BUUUUUT.....
+
+The new vector ->𝜣 does not classify all the points correctly. (1), (3) & (4) are on the wrong side
+
+Here is a trick to solve this
+
+When you are provided the data set. we wont be provided the points one after the other. We will be provided all the n(here 6) points together. So we can choose any point to be the 1st, 2nd, 3rd and nth. It's up to us. SO WE START AGAIN
+
+Take the 1st point to be x⁽⁵⁾ previously
+```
+we get ->𝜣 = -1 ﹒|  1  | = | -1 |
+		  |- ﹒5|   |﹒5 |
+
+This wont classify still
+
+```
+
+Take the second point to be x⁽⁴⁾ previously
+```
+	y ﹒(->𝜣 ﹒x) = -1 ﹒([-1 ﹒5] |-﹒5| ) = (﹒5-﹒25) = ﹒25<0
+				       |-﹒5|
+```
+
+So 
+```
+	->𝜣new = ->𝜣old + y⁽²⁾ x⁽²⁾    : (2) this is the new second point when we started again 
+	
+	= |-1 | + (-1)|-﹒5| = |-﹒5|
+	  |﹒5|	      |-﹒5|   |  1 |
+
+```
+
+
+Lets look what happens now 
+
+<img src="img/img28.png" alt="future events  img" width="700"/>
+
+<img src="img/img29.png" alt="future events  img" width="700"/>
+
+
+If you do this for a long time you will find a solution
+
+
+The actual algorithm looks like this
+
+
+<img src="img/img30.png" alt="future events  img" width="700"/>
+
+
+Note that the perceptron finds A solution. there can be many more solutions for the traning set
+
+Now we will see how we can generalise this when there is an offset parameter
+
+
+## Perceptron General case
+
+we already know to test classification we can do 
+```
+	y⁽ⁱ⁾(->𝜣 ﹒x⁽ⁱ⁾ + 𝜣₀) > 0 or ≦ 0
+
+```
+
+The real trick is in updating 𝜣₀. For this we will think of our problem as findinga new vector ->𝜣 that will have an additional last entry of 𝜣₀, ie:
+
+<img src="img/img31.png" alt="future events  img" width="700"/>
+
+
+The algorithm look slike this:
+
+<img src="img/img32.png" alt="future events  img" width="700"/>
+
+
+This brings us to the end of the lecture
 
 
 
