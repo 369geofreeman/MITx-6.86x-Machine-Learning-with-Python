@@ -6,10 +6,12 @@
   * [Homework](https://github.com/369geofreeman/MITx-6.86x-Machine-Learning-with-Python/tree/master/week_0/homework)
   * [Project](https://github.com/369geofreeman/MITx-6.86x-Machine-Learning-with-Python/tree/master/week_0/project0) 
 
-
 #### [Unit One:](https://github.com/369geofreeman/MITx-6.86x-Machine-Learning-with-Python/tree/master/week_1) Linear Classifiers and generalisations
   * [Lecture One: Introduction to Machine Learning](https://github.com/369geofreeman/MITx-6.86x-Machine-Learning-with-Python/tree/master/week_1/lecture_1)
   * [Lecture Two: Linear Classifiers and Perceptron Algorithm](https://github.com/369geofreeman/MITx-6.86x-Machine-Learning-with-Python/tree/master/week_1/lecture_2)
+  * [Lecture Three: Hinge loss, Margin boundaries and Regularization](https://github.com/369geofreeman/MITx-6.86x-Machine-Learning-with-Python/tree/master/week_1/lecture_3)
+
+
 
 ## Notes (cmd+f cheatsheet)
 
