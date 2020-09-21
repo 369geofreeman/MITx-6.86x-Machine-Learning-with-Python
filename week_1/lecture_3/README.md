@@ -1,7 +1,7 @@
 # Lecture 3 Hinge loss, Margin boundaries and Regularization
 
 
-## Objective
+## Objective
 
 ### Hinge loss, Margin boundaries, and Regularization
 
@@ -113,9 +113,76 @@ The idea is simple : The actual decision boundry will lie slightly inbetween the
 If you wish to see it another way, here is the idea. We will have our decision boundry, and parallel to it will be two more boundries, one on each side. we will somehow strech these two boundries along 𝜣's direction and see how our problems solution can be found in an optimal way
 
 
-## Linear Classification : Margin
+## Linear Classification : Margin
 
-Lets now try to write 
+Lets now try to write the equation of these margin boundries. Forst we must note that these are just lines (hyperplanes in general) that are parallel to our decission boundry 𝜣 ﹒x + 𝜣₀ = 0.
+So the normal vector for all boundries, decision(one) and margin(two) will be the same direction
+
+<img src="img/img8.png" alt="" width="600"/>
+
+
+So we can with confidence say that the equation of margin boundries will be of the form 𝜣 ﹒x + c = 0.
+	- C is some real value and will differ for possitive and negative margin boundries
+
+
+Now for  given 𝜣 vector and 𝜣₀, that is for a given  decision boundry. We want two lines (hyperplanes generally). that are parallel to the decission boundry. One we impose (by construction) this parallality conditioin it's fixed that the equasions of margins will be of form 𝜣 ﹒x + c = 0
+
+Now note that we only have one more constraint left for these margin boundries and that is c. Once the c is fixed they are fixed, amd thet can't move towards or away from decision boundry along 𝜣 vector.
+
+And now out of nowhere we clain that the equation of margins are:
+
+	* Positive margin classifier : 𝜣 ﹒x + 𝜣₀ = 1
+	* Negative margin classifier : 𝜣 ﹒x + 𝜣₀ = -1
+
+WHY?
+
+how can we say that? What about the idea of moving these margins along 𝜣 vectors direction in order to find a good margin classifier? 
+It seems that we have fixed the margins once we assign the above two equations to the two margins respectively
+
+But before we rush to judgement lets just try to find the perpendicular distance between any of the margin boundry and the decision bounry.
+
+We already know the distance of point with x₀ from line 𝜣 ﹒x + 𝜣₀ = 0 is 
+
+<img src="img/img9.png" alt="" width="600"/>
+
+We can use this trick to find the distance between
+
+	* Line 1 : 𝜣 ﹒x + 𝜣₀ = 0
+and
+	* Line 2 : 𝜣 ﹒x + 𝜣₀ = 1
+
+
+
+**The idea si as following**
+
+Finding the distance between line 1 and line 2 is equivalent to finding the perpendicular distance between **ANY** point on line 2, and line 1. We can take any point on line 2 because, line 1 and line 2 are parallel, so the distance between and point on line 2, to that of line 1 will be the distance between the two lines
+
+<img src="img/img10.png" alt="" width="600"/>
+
+So lets take a general point on pline 2 with vector V₀. 
+The distance between V₀(point) and line 1 will be
+
+<img src="img/img11.png" alt="" width="600"/>
+
+Now vector V₀ lies on line 2 so it must satisfy
+```
+	𝜣 ﹒V₀ + 𝜣₀ = 1
+```
+
+Substituting we get the distance between line 1 and line 2 that is
+```
+	  1
+	-----
+	||𝜣||
+```
+
+if we wanted to find the distance between 𝜣 ﹒x + 𝜣₀ = -1 and line 1.
+It would similiarly be 
+
+<img src="img/img12.png" alt="" width="600"/>
+
+
+
 
 
 
