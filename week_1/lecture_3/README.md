@@ -420,7 +420,7 @@ Here the -1 labelled point lies in between the decision boundry and the negative
 Therefore the agreement will be smaller than 1, but bigger than 0 for this case. So when the point  is in between the mergin (nagative for -1, positive for +1), we will somewhat agree and the agreement z will be between 0 and 1
 
 
-<img src="img/img27.png" alt="" width="450"/>
+<img src="img/img28.png" alt="" width="450"/>
 
 Here the -1 labelled point lies beyond the decission boundry. ie it's missclassified. So yi(𝜣,𝜣₀) < 0. So the agreement z will also be negative. So the negative agreement will be a disagreement... the point is on the wrong side, we disagree.
 
@@ -433,28 +433,69 @@ This all can be done with a positive boundry and +1 labelled points too.
 ## Hinge Loss
 
 
-Once we have defined our agreement z, we will penalize our points on basis of this z. We will choose a function
+Once we have defined our agreement z, we will penalize our points on basis of this z. We will choose a function, that will not penalize points that are well beyond their respective boundries (poss for +1 labelled, neg for -1 labelled) and as the points start coming closer to the decision boundry the penalizing will increase more and more. For this we choose a simple linear function
+
+
+<img src="img/img29.png" alt="" width="600"/>
+
+
+With the help of thius function we can account for the loss each point will contribute to the average, ie 
+<img src="img/img31.png" alt="" width="450"/>
+
+And this will for one part of our objective function. The other part will be...
 
 
 
+## Regularization term
+
+We have already talked about this earlier, but once again we want to maximize the width off boundries
+
+<img src="img/img30.png" alt="" width="600"/>
+
+Lets now finally make our objective function
 
 
+## Large Margin as Optimization
 
 
+So we want to minimise the average loss
+
+<img src="img/img33.png" alt="" width="450"/>
 
 
+And we want to minimise ||𝜣||² / 2
+
+But both are counter to one another, making one small will by construction make the other large. So instead we try to optimise a combination of the two which we call objection function
+
+<img src="img/img34.png" alt="" width="600"/>
+
+And minimising the above function will give us optimal 𝜣 and 𝜣₀
+
+We have introduced a term ג called the regulization parameter or hypaparameter. this weighs the regulization terms contribution to the objective function in contrast to the loss term. We will see what ℷ does in the next lecture.
+
+We will also see how the above objective function is minimised to find 𝜣 and 𝜣₀ optimally.
+
+Before we end this lecture, lets see how different points have different losses with the boundries
 
 
+## Calculating Losses: Example
+
+Lets recall the definition of hinge loss
 
 
+<img src="img/img35.png" alt="" width="600"/>
+
+The point to note here is, as long as a point is beyound it's respective amrgin boundry **and** correctly classifies, the loss is zero. As z decreases the loss increases linearly
+
+In the next figure we will see losses for different points placed at different positions for a given 𝜣 and 𝜣₀
+
+<img src="img/img36.png" alt="" width="600"/>
 
 
+Lets do it
 
 
-
-
-
-
+<img src="img/img37.png" alt="" width="700"/>
 
 
 
