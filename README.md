@@ -1,5 +1,9 @@
 # MITx-6.86x Machine Learning with Python
 
+## Algorithms
+
+* [Perceptron](https://github.com/369geofreeman/MITx-6.86x-Machine-Learning-with-Python/tree/master/Algorythms/Perceptron)
+
 ## Chapters
 
 ### [Unit Zero:](https://github.com/369geofreeman/MITx-6.86x-Machine-Learning-with-Python/tree/master/week_0) Brief Review of Vectors, Planes, and Optimization
