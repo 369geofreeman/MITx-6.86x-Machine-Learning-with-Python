@@ -2,7 +2,7 @@
 
 ## Algorithms
 
-* [Perceptron](https://github.com/369geofreeman/MITx-6.86x-Machine-Learning-with-Python/tree/master/Algorythms/Perceptron)
+* [Perceptron](https://github.com/369geofreeman/MITx-6.86x-Machine-Learning-with-Python/blob/master/algorithms/perceptron)
 
 ## Chapters
 
