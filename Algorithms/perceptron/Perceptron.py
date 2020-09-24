@@ -73,14 +73,3 @@ class Perceptron:
 
 
 
-
-
-
-
-
-
-
-
-
-
-
