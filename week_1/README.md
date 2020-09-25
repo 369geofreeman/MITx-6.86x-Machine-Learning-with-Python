@@ -7,4 +7,6 @@
 
 ### [Lecture 3](https://github.com/369geofreeman/MITx-6.86x-Machine-Learning-with-Python/tree/master/week_1/lecture_3) Hinge loss, Margin boundaries and Regularization
 
-### [Lecture 4]()
+### [Lecture 4](https://github.com/369geofreeman/MITx-6.86x-Machine-Learning-with-Python/tree/master/week_1/lecture_4)
+
+### [Homework](https://github.com/369geofreeman/MITx-6.86x-Machine-Learning-with-Python/tree/master/week_1/homework)
