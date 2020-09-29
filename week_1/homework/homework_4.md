@@ -36,10 +36,10 @@ Solve for  𝜃1^,𝜃2^ .
 
 Hint: For the above example, show that  Lossℎ(𝑦(𝜃̂ ⋅𝑥))≤0
 
-Answer = 𝜃1^=
+Answer = 𝜃1^= 1
 
 
-Answer 𝜃2^= = 
+Answer 𝜃2^= = 0
 
 ## Minimizing Loss - Numerical Example (2)
 
