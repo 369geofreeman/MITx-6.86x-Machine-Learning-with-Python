@@ -37,7 +37,7 @@ def hinge_loss_single(feature_vector, label, theta, theta_0):
     given data point and parameters.
     """
     # Your code here
-    raise NotImplementedError
+    return max(0, 1 - label * (np.sum(feature_vector * theta) + theta_0))
 #pragma: coderesponse end
 
 
@@ -61,7 +61,11 @@ def hinge_loss_full(feature_matrix, labels, theta, theta_0):
     loss across all of the points in the feature matrix.
     """
     # Your code here
-    raise NotImplementedError
+    res = []
+    for index,vector in enumerate(feature_matrix):
+        res.append(max(0, 1 - labels[index] * (np.sum(vector * theta) + theta_0)) )
+    return sum(res) / len(feature_matrix)
+
 #pragma: coderesponse end
 
 
