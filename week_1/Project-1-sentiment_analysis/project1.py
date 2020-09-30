@@ -168,13 +168,15 @@ def average_perceptron(feature_matrix, labels, T):
     find a sum and divide.
     """
     theta, theta_0 = np.zeros((feature_matrix.shape[1])), 0
-    av_theta = av_theta_0 = []
+    av_theta, av_theta_0 = np.zeros((feature_matrix.shape[1],)), 0
     for t in range(T):
         for i in get_order(feature_matrix.shape[0]):
             theta, theta_0 = perceptron_single_step_update(feature_matrix[i,:], labels[i], theta, theta_0)
-            av_theta.append(theta)
-            av_theta_0.append(theta_0)
-    return (np.average(av_theta), np.average(theta_0))
+            print(theta, theta_0)
+            av_theta += theta
+            av_theta_0 += theta_0
+    rowTimes = T * feature_matrix.shape[0]
+    return av_theta/rowTimes, av_theta_0/rowTimes
 #pragma: coderesponse end
 
 
