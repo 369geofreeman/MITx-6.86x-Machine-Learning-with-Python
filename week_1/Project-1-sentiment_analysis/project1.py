@@ -260,14 +260,6 @@ def pegasos(feature_matrix, labels, T, L):
 
     return theta, theta_0
 
-"""
-    for t in range(T):
-        for i in get_order(feature_matrix.shape[0]):
-            theta, theta_0 = perceptron_single_step_update(feature_matrix[i,:], labels[i], theta, theta_0)
-            print(theta, theta_0)
-    return (theta, theta_0)
-#pragma: coderesponse end
-"""
 #pragma: coderesponse end
 
 # Part II
@@ -292,7 +284,8 @@ def classify(feature_matrix, theta, theta_0):
     be considered a positive classification.
     """
     # Your code here
-    raise NotImplementedError
+    return ((np.sum(feature_matrix*theta, axis=1) + theta_0) > 0)*2 - 1
+
 #pragma: coderesponse end
 
 
