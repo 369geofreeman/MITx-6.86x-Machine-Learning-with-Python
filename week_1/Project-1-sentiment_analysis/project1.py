@@ -2,6 +2,7 @@ from string import punctuation, digits
 import numpy as np
 import random
 
+
 # Part I
 
 
@@ -207,8 +208,14 @@ def pegasos_single_step_update(
     real valued number with the value of theta_0 after the current updated has
     completed.
     """
-    # Your code here
-    raise NotImplementedError
+    # Your code here 
+    if label * (np.sum(current_theta * feature_vector) + current_theta_0) <= 1:
+        new_theta = ((1 - eta*L) * current_theta) + ((eta*label) * feature_vector)
+        new_theta_0 = current_theta_0 + eta*label
+    else:
+        new_theta = ((1-eta*L) * current_theta)
+        new_theta_0 = current_theta_0
+    return new_theta, new_theta_0
 #pragma: coderesponse end
 
 
@@ -243,7 +250,24 @@ def pegasos(feature_matrix, labels, T, L):
     parameter, found after T iterations through the feature matrix.
     """
     # Your code here
-    raise NotImplementedError
+    theta, theta_0 = np.zeros((feature_matrix.shape[1],)), 0
+    t = 0
+    for _ in range(T):
+        for i in get_order(feature_matrix.shape[0]):
+            t += 1 
+            eta = 1/np.sqrt(t)
+            theta, theta_0 = pegasos_single_step_update(feature_matrix[i,:], labels[i], L, eta, theta, theta_0)
+
+    return theta, theta_0
+
+"""
+    for t in range(T):
+        for i in get_order(feature_matrix.shape[0]):
+            theta, theta_0 = perceptron_single_step_update(feature_matrix[i,:], labels[i], theta, theta_0)
+            print(theta, theta_0)
+    return (theta, theta_0)
+#pragma: coderesponse end
+"""
 #pragma: coderesponse end
 
 # Part II

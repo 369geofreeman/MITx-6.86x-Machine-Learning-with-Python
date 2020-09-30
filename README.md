@@ -16,6 +16,7 @@
   * [Lecture Three: Hinge loss, Margin boundaries and Regularization](https://github.com/369geofreeman/MITx-6.86x-Machine-Learning-with-Python/tree/master/week_1/lecture_3)
   * [Lecture Four: Linear Classification and Generalization](https://github.com/369geofreeman/MITx-6.86x-Machine-Learning-with-Python/tree/master/week_1/lecture_4)
   * [Homework](https://github.com/369geofreeman/MITx-6.86x-Machine-Learning-with-Python/tree/master/week_1/homework)
+  * [Project One: Sentiment Analysis](https://github.com/369geofreeman/MITx-6.86x-Machine-Learning-with-Python/tree/master/week_1/Project-1-sentiment_analysis)
 
 
 ## Notes (cmd+f cheatsheet)
