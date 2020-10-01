@@ -133,7 +133,6 @@ def perceptron(feature_matrix, labels, T):
     for t in range(T):
         for i in get_order(feature_matrix.shape[0]):
             theta, theta_0 = perceptron_single_step_update(feature_matrix[i,:], labels[i], theta, theta_0)
-            print(theta, theta_0)
     return (theta, theta_0)
 #pragma: coderesponse end
 
@@ -173,7 +172,6 @@ def average_perceptron(feature_matrix, labels, T):
     for t in range(T):
         for i in get_order(feature_matrix.shape[0]):
             theta, theta_0 = perceptron_single_step_update(feature_matrix[i,:], labels[i], theta, theta_0)
-            print(theta, theta_0)
             av_theta += theta
             av_theta_0 += theta_0
     rowTimes = T * feature_matrix.shape[0]
