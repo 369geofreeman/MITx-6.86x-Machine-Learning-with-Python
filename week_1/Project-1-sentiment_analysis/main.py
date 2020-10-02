@@ -15,7 +15,7 @@ val_texts, val_labels = zip(*((sample['text'], sample['sentiment']) for sample i
 test_texts, test_labels = zip(*((sample['text'], sample['sentiment']) for sample in test_data))
 
 dictionary = p1.bag_of_words(train_texts)
-
+print(dictionary)
 train_bow_features = p1.extract_bow_feature_vectors(train_texts, dictionary)
 val_bow_features = p1.extract_bow_feature_vectors(val_texts, dictionary)
 test_bow_features = p1.extract_bow_feature_vectors(test_texts, dictionary)
@@ -165,17 +165,20 @@ best_training_result = training_results[best_result_i]
 
 print("The Best Method Was: {}, Accuracy = {}, Parameters = {}".format(best_method[0], *best_training_result))
 
-avg_peg_train_acc, avg_peg_val_acc = p1.classifier_accuracy(p1.pegasos, test_bow_features,val_bow_features,test_labels,val_labels,T=T,L=L)
+avg_peg_train_acc, avg_peg_val_acc = p1.classifier_accuracy(p1.pegasos, test_bow_features,val_bow_features, test_labels,val_labels, T=T, L=L)
 
 print('Testing {} for avg training acc: {} and avg validation acc: {}'.format(best_method[0], avg_peg_train_acc, avg_peg_val_acc))
+
+best_theta, best_theta_0 = best_method[1](train_bow_features, train_labels, *best_training_result[1])
+print("Best Theta: ", best_theta)
 
 #-------------------------------------------------------------------------------
 # Assign to best_theta, the weights (and not the bias!) learned by your most
 # accurate algorithm with the optimal choice of hyperparameters.
 #-------------------------------------------------------------------------------
 
-# best_theta = None # Your code here
-# wordlist   = [word for (idx, word) in sorted(zip(dictionary.values(), dictionary.keys()))]
-# sorted_word_features = utils.most_explanatory_word(best_theta, wordlist)
-# print("Most Explanatory Word Features")
-# print(sorted_word_features[:10])
+best_theta = best_theta # Your code here
+wordlist   = [word for (idx, word) in sorted(zip(dictionary.values(), dictionary.keys()))]
+sorted_word_features = utils.most_explanatory_word(best_theta, wordlist)
+print("Most Explanatory Word Features")
+print(sorted_word_features[:10])
