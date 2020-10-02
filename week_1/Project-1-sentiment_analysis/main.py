@@ -15,7 +15,7 @@ val_texts, val_labels = zip(*((sample['text'], sample['sentiment']) for sample i
 test_texts, test_labels = zip(*((sample['text'], sample['sentiment']) for sample in test_data))
 
 dictionary = p1.bag_of_words(train_texts)
-print(dictionary)
+
 train_bow_features = p1.extract_bow_feature_vectors(train_texts, dictionary)
 val_bow_features = p1.extract_bow_feature_vectors(val_texts, dictionary)
 test_bow_features = p1.extract_bow_feature_vectors(test_texts, dictionary)
@@ -102,8 +102,10 @@ data = (train_bow_features, train_labels, val_bow_features, val_labels)
 # data = (test_bow_features, test_labels, val_bow_features, val_labels)
 
 # values of T and lambda to try
-Ts = [1, 5, 10, 15, 25, 50]
-Ls = [0.001, 0.01, 0.1, 1, 10]
+# Ts = [1, 5, 10, 15, 25, 50]
+Ts = [25]
+# Ls = [0.001, 0.01, 0.1, 1, 10]
+Ls = [0.01]
 
 pct_tune_results = utils.tune_perceptron(Ts, *data)
 pct_best_acc, pct_best_T = np.max(pct_tune_results[1]), Ts[np.argmax(pct_tune_results[1])]
@@ -129,8 +131,10 @@ print('Pegasos valid: tune T', list(zip(Ts, peg_tune_results_T[1])))
 peg_best_T_acc, peg_best_T  = np.max(peg_tune_results_T[1]), Ts[np.argmax(peg_tune_results_T[1])]
 print('best = {:.4f}, T={:.4f}'.format(np.max(peg_tune_results_T[1]), Ts[np.argmax(peg_tune_results_T[1])]))
 
-fix_T = Ts[np.argmax(peg_tune_results_T[1])]
+# fix_T = Ts[np.argmax(peg_tune_results_T[1])]
+fix_T = 25
 peg_tune_results_L = utils.tune_pegasos_L(fix_T, Ls, *data)
+
 peg_best_L, peg_best_acc = Ls[np.argmax(peg_tune_results_L[1])], np.max(peg_tune_results_L[1])
 print('Pegasos valid: tune L', list(zip(Ls, peg_tune_results_L[1])))
 print('best = {:.4f}, L={:.4f}'.format(np.max(peg_tune_results_L[1]), Ls[np.argmax(peg_tune_results_L[1])]))
@@ -178,6 +182,11 @@ print("Best Theta: ", best_theta)
 #-------------------------------------------------------------------------------
 
 best_theta = best_theta # Your code here
+
+# Remove stop-words from dict
+
+
+
 wordlist   = [word for (idx, word) in sorted(zip(dictionary.values(), dictionary.keys()))]
 sorted_word_features = utils.most_explanatory_word(best_theta, wordlist)
 print("Most Explanatory Word Features")
