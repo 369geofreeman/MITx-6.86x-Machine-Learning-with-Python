@@ -9,4 +9,6 @@
 
 ### [Lecture 4](https://github.com/369geofreeman/MITx-6.86x-Machine-Learning-with-Python/tree/master/week_1/lecture_4)  Linear Classification and Generalization
 
+### [Project One](https://github.com/369geofreeman/MITx-6.86x-Machine-Learning-with-Python/tree/master/week_1/Project-1-sentiment_analysis)
+
 ### [Homework](https://github.com/369geofreeman/MITx-6.86x-Machine-Learning-with-Python/tree/master/week_1/homework)

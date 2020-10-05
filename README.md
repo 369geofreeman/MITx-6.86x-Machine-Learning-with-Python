@@ -19,8 +19,8 @@
   * [Project One: Sentiment Analysis](https://github.com/369geofreeman/MITx-6.86x-Machine-Learning-with-Python/tree/master/week_1/Project-1-sentiment_analysis)
 
 
-#### [unit Two: ]() Nonlinear Classification, Linear regression, Collaborative Filtering
-  * [Lecture 5. Linear Regression]()
+#### [Unit Two: ](https://github.com/369geofreeman/MITx-6.86x-Machine-Learning-with-Python/tree/master/week_3) Nonlinear Classification, Linear regression, Collaborative Filtering
+  * [Lecture 5. Linear Regression](https://github.com/369geofreeman/MITx-6.86x-Machine-Learning-with-Python/tree/master/week_2/lecture_5)
 
 ## Notes (cmd+f cheatsheet)
 
