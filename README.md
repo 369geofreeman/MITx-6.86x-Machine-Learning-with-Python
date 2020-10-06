@@ -20,7 +20,11 @@
 
 
 #### [Unit Two: ](https://github.com/369geofreeman/MITx-6.86x-Machine-Learning-with-Python/tree/master/week_3) Nonlinear Classification, Linear regression, Collaborative Filtering
-  * [Lecture 5. Linear Regression](https://github.com/369geofreeman/MITx-6.86x-Machine-Learning-with-Python/tree/master/week_3/lecture_5)
+  * [Lecture 5: Linear Regression](https://github.com/369geofreeman/MITx-6.86x-Machine-Learning-with-Python/tree/master/week_3/lecture_5)
+  * [Lecture Six: Nonlinear Classification](https://github.com/369geofreeman/MITx-6.86x-Machine-Learning-with-Python/tree/master/week_3/lecture_6)
+
+
+
 
 ## Notes (cmd+f cheatsheet)
 
