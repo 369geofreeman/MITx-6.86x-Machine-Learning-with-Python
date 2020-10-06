@@ -28,7 +28,7 @@ Compute the value of
 𝑅𝑛(𝜃)=14∑𝑡=14Lossℎ(𝑦(𝑡)−𝜃⋅𝑥(𝑡)).
 
 
-Answer = 0.8525 <- wrong
+Answer = 1.25
 
 
 ### Compute Squared Error Loss
