@@ -17,7 +17,11 @@ What is the dimension of the space that  𝜙(𝑥)  lives in? That is,  𝜙(�
 Hint: The number of ways to select a multiset of  𝑘  non-unique items from  𝑛  total is  (𝑛+𝑘−1𝑘) . For example, if a ball can be any of 3 colors, then the number of color configurations of 2 balls is  (3+2−12)=(42)=6 .
 
 
-Answer:  d = 
+Answer:  d = 585275
+
+Solution:
+
+For each of the feature transformations (power 1, power 2, power 3), there are n-multichoose-power combinations. Thus  (1501)+(1512)+(1523)=585275 . Remark: We see that the dimension of the space that the feature vectors live grows quickly as a function of  𝑑,  the dimension we started with if  𝑥∈ℝ𝑑 . 
 
 
 ### Regression using Higher Order Polynomial feature
@@ -31,7 +35,11 @@ We want to find a non-linear regression function  𝑓  that predicts  𝑦  fro
  
 where  𝜙(𝑥)  is a polynomial feature vector of some order. What (loosely) is the minimum order of  𝜙(𝑥) ?
 
-Answer = 
+Answer = 3
+
+Solution:
+
+The relationship between  𝑦  and  𝑥  can be roughly described by a cubic function, so a feature vector  𝜙(𝑥)  of minimum order 3 can minimize structural errors.
 
 
 ### Effect of Regularization on Higher Order Regression
@@ -51,3 +59,8 @@ Answer = A
 Which figure corresponds to the largest regularization parameter  𝜆 ?
 
 Answer = B
+
+
+Solution:
+
+The effect of regularization is to restrict the parameters of a model to freely take on large values. This will make the model function smoother, leveling the 'hills' and filling the 'vallyes'. It will also make the model more stable, as a small perturbation on  𝑥  will not change  𝑦  significantly with smaller  ‖𝜃‖ .
