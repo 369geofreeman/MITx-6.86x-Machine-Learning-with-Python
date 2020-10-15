@@ -5,5 +5,7 @@
 ### [Lecture Six: ](https://github.com/369geofreeman/MITx-6.86x-Machine-Learning-with-Python/tree/master/week_3/lecture_6) Nonlinear Classification
 
 ### [Lecture Seven: ](https://github.com/369geofreeman/MITx-6.86x-Machine-Learning-with-Python/tree/master/week_3/lecture_7) Recommender Systems
+### [Homework](https://github.com/369geofreeman/MITx-6.86x-Machine-Learning-with-Python/tree/master/week_3/homework)
 
-### [Homework](https://github.com/369geofreeman/MITx-6.86x-Machine-Learning-with-Python/tree/master/week_3/homework)
+### [Project Two: Digit recognition (Part 1)](https://github.com/369geofreeman/MITx-6.86x-Machine-Learning-with-Python/tree/master/week_3/project_2)
+
