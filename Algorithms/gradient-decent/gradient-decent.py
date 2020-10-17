@@ -5,11 +5,11 @@ import matplotlib.pyplot as plt
 
 # When testing these algorithms it's a good idea to start
 # with a smaller iteration rate and see if the cost is
-# being reduced with each iteration. If so try and make the
+# being reduced with each iteration. If so, try and make the
 # learning rate (step size) bigger by increasing it while
 # still achieving the same results of a smaller cost with
 # each iteration.
-# Id the cost is too big we will increase the glbal minima
+# If the cost is too big we will increase the global minima
 # and start to head in the wrong direction (up)
 
 
@@ -18,14 +18,15 @@ import matplotlib.pyplot as plt
 # Here we start with the input array [1, 2, 3, 4, 5]
 # and the output array [5, 7, 9, 11, 13]
 # y = m*x + b,
-# if I have m=2 and b=3 (which is the   result of running this function) then:
+# if I have m=2 and b=3 (which is the result of running this function) then:
 # 5 = 2*1 + 3
 # 7 = 2*2 + 3
 # 9 = 2*3 + 3
-# and so on. So these values of m and b satisfies our equation hence they are expected values
+# and so on. So these values of m and b satisfies our equation hence they are 
+# our expected values
 
 
-## the code
+## The code
 
 def gradient_decent(x, y):
     # start with 0 and take small steps to reach
@@ -57,7 +58,6 @@ def gradient_decent(x, y):
         # Plot the results
         plt.plot(x, y_predicted, color='green')
     plt.show()
-
 
 x = np.array([1, 2, 3, 4, 5])
 y = np.array([5, 7, 9, 11, 13])
