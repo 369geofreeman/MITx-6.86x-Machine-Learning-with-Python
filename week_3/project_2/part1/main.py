@@ -145,24 +145,24 @@ print('softmax test_error=', run_softmax_on_MNIST_mod3(temp_parameter=1.0))
 
 # TODO: First fill out the PCA functions in features.py as the below code depends on them.
 
-#n_components = 18
-#pcs = principal_components(train_x)
-#train_pca = project_onto_PC(train_x, pcs, n_components)
-#test_pca = project_onto_PC(test_x, pcs, n_components)
-# train_pca (and test_pca) is a representation of our training (and test) data
+n_components = 18
+pcs = principal_components(train_x)
+train_pca = project_onto_PC(train_x, pcs, n_components)
+test_pca = project_onto_PC(test_x, pcs, n_components)
+# train_pca (and test_pca) is a representation of our training (and test) data
 # after projecting each example onto the first 18 principal components.
 
 
 # TODO: Train your softmax regression model using (train_pca, train_y)
 #       and evaluate its accuracy on (test_pca, test_y).
-#theta, cost_function_history = softmax_regression(train_pca, train_y, temp_parameter=1, alpha= 0.3, lambda_factor = 1.0e-4, k = 10, num_iterations = 150)
+theta, cost_function_history = softmax_regression(train_pca, train_y, temp_parameter=1, alpha= 0.3, lambda_factor = 1.0e-4, k = 10, num_iterations = 150)
 
-#plot_cost_function_over_time(cost_function_history)
+plot_cost_function_over_time(cost_function_history)
 
 # Compute the test error with projected test data
-#test_error = compute_test_error(test_pca, test_y, theta, temp_parameter=1)
+test_error = compute_test_error(test_pca, test_y, theta, temp_parameter=1)
 
-#print("Test error with 18-dim PCA representation:", test_error)
+print("Test error with 18-dim PCA representation:", test_error)
 
 # TODO: Use the plot_PC function in features.py to produce scatterplot
 #       of the first 100 MNIST images, as represented in the space spanned by the
@@ -186,28 +186,28 @@ print('softmax test_error=', run_softmax_on_MNIST_mod3(temp_parameter=1.0))
 
 ## Cubic Kernel ##
 # TODO: Find the 10-dimensional PCA representation of the training and test set
-#n_components = 10
-#pcs = principal_components(train_x)
-#train_pca10 = project_onto_PC(train_x, pcs, n_components)
-#test_pca10 = project_onto_PC(test_x, pcs, n_components)
+n_components = 10
+pcs = principal_components(train_x)
+train_pca10 = project_onto_PC(train_x, pcs, n_components)
+test_pca10 = project_onto_PC(test_x, pcs, n_components)
 #
 ## TODO: First fill out cubicFeatures() function in features.py as the below code requires it.
 #
-#train_cube = cubic_features(train_pca10)
-#test_cube = cubic_features(test_pca10)
+train_cube = cubic_features(train_pca10)
+test_cube = cubic_features(test_pca10)
 ## train_cube (and test_cube) is a representation of our training (and test) data
 ## after applying the cubic kernel feature mapping to the 10-dimensional PCA representations.
 #
 #
 ## TODO: Train your softmax regression model using (train_cube, train_y)
 ##       and evaluate its accuracy on (test_cube, test_y).
-#theta, cost_function_history = softmax_regression(train_cube, train_y, temp_parameter=1, alpha= 0.3, lambda_factor = 1.0e-4, k = 10, num_iterations = 150)
+theta, cost_function_history = softmax_regression(train_cube, train_y, temp_parameter=1, alpha= 0.3, lambda_factor = 1.0e-4, k = 10, num_iterations = 150)
 #
-#plot_cost_function_over_time(cost_function_history)
+plot_cost_function_over_time(cost_function_history)
 #
-#test_error = compute_test_error(test_cube, test_y, theta, temp_parameter=1)
+test_error = compute_test_error(test_cube, test_y, theta, temp_parameter=1)
 #
-#print("Test error with 10-dim PCA with cubic features:", test_error)
+print("Test error with 10-dim PCA with cubic features:", test_error)
 
 #%% Implement kernelized softmax regression
     
@@ -272,10 +272,10 @@ print("Time taken to run kernelized softmax regression with {} training examples
 print("-----------------------------------------------------------------")
    
 #%% Kernelized classification using sklearn's SVM package
-#import sklearn
-#svm = sklearn.svm.SVC(C=100, gamma='scale')
-#svm.fit(train_x, train_y)
-#print((test_y == svm.predict(test_x)).mean())
+import sklearn
+svm = sklearn.svm.SVC(C=100, gamma='scale')
+svm.fit(train_x, train_y)
+print((test_y == svm.predict(test_x)).mean())
 
 #%% Check gradient computation by comparing to numerical gradient
 def eval_numerical_gradient(f, x, h=1e-4):
@@ -319,4 +319,4 @@ def grad_relative_error(alphas):
     
     return relative_error
 
-#print("The relative error for gradient computation is:", grad_relative_error(alphas))
+print("The relative error for gradient computation is:", grad_relative_error(alphas))
