@@ -20,5 +20,13 @@ If  𝜙(𝑥)∈ℝ𝐷,  then the classification parameter  𝜃  is also a ve
 Answer = true, if feature map is a function from Rd to Rd ,then theta must be also in Rd , else the dot product is not possible between them.
 
 
+### Neural networks
 
+Motivation to Neural Networks
+
+So far, the ways we have performed non-linear classification involve either first mapping  𝑥  explicitly into some feature vectors  𝜙(𝑥),  whose coordinates involve non-linear functions of  𝑥,  or in order to increase computational efficiency, rewriting the decision rule in terms of a chosen kernel, i.e. the dot product of feature vectors, and then using the training data to learn a transformed classification parameter.
+
+However, in both cases, the feature vectors are chosen . They are not learned in order to improve performance of the classification problem at hand.
+
+Neural networks, on the other hand, are models in which the feature representation is learned jointly with the classifier to improve classification performance.
 

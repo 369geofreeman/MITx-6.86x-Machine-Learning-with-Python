@@ -27,6 +27,10 @@
   * [Project Two: Digit recognition (Part 1)](https://github.com/369geofreeman/MITx-6.86x-Machine-Learning-with-Python/tree/master/week_3/project_2)
 
 
+#### [Unit Three](https://github.com/369geofreeman/MITx-6.86x-Machine-Learning-with-Python/tree/master/week_4) Unit 3 Neural networks
+  * [Lecture Eight: Introduction to Feedforward Neural Networks](https://github.com/369geofreeman/MITx-6.86x-Machine-Learning-with-Python/tree/master/week_4/lecture_8)
+
+
 
 ## Notes (cmd+f cheatsheet)
 
