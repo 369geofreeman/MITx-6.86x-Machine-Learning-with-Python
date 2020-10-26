@@ -1,8 +1,5 @@
 # MITx-6.86x Machine Learning with Python
 
-## Algorithms
-
-* [Perceptron](https://github.com/369geofreeman/MITx-6.86x-Machine-Learning-with-Python/tree/master/Algorithms/perceptron)
 
 ## Units
 
@@ -34,6 +31,8 @@
   * [Lecture 11. Recurrent Neural Networks 2](https://github.com/369geofreeman/MITx-6.86x-Machine-Learning-with-Python/tree/master/week_4/lecture_11)
   * [Lecture 12. Convolutional Neural Networks](https://github.com/369geofreeman/MITx-6.86x-Machine-Learning-with-Python/tree/master/week_4/lecture_12)
   * [Homework](https://github.com/369geofreeman/MITx-6.86x-Machine-Learning-with-Python/tree/master/week_4/homework)
+  * [Project 3: Digit recognition (Part 2)](https://github.com/369geofreeman/MITx-6.86x-Machine-Learning-with-Python/tree/master/week_4/project_3)
+
 
 
 ## Notes (cmd+f cheatsheet)
