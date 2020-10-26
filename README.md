@@ -33,7 +33,7 @@
   * [Lecture 10. Recurrent Neural Networks 1](https://github.com/369geofreeman/MITx-6.86x-Machine-Learning-with-Python/tree/master/week_4/lecture_10)
 
   * [Lecture 11. Recurrent Neural Networks 2](https://github.com/369geofreeman/MITx-6.86x-Machine-Learning-with-Python/tree/master/week_4/lecture_11)
-
+  * [Homework](https://github.com/369geofreeman/MITx-6.86x-Machine-Learning-with-Python/tree/master/week_4/homework)
 
 
 ## Notes (cmd+f cheatsheet)
