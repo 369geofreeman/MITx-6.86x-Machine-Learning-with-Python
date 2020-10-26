@@ -31,4 +31,55 @@ Consider the input  𝑥1=3 ,  𝑥2=14 . What is the final output  (𝑜1,𝑜2
 Important: Numerical outputs from the softmax function are sometimes extremely close to 0 or 1. We recommend you enter you answer as a mathematical expression, such as e∧2+1. If you choose to enter your answers as a decimal, you must enter the decimal accurate to at least 9 decimal places .
 
 
+Answer = o1 - 0.99999969409
+Answer = 02 = 0.0000003059
+
+
+### Decision Boundaries
+
+In this problem we visualize the “decision boundaries" in  𝑥 -space, corresponding to the four hidden units. These are the lines in  𝑥 -space where the values of  𝑧1,𝑧2,𝑧3,𝑧4  are exactly zero. Plot the decision boundaries of the four hidden units using the parameters of  𝑊  provided above.
+
+Enter below the area of the region of your plot that corresponds to a negative ( <0 ) value for all of the four hidden units.
+
 Answer = 
+
+
+### Output of Neural Network
+
+Using the same matrix  𝑉  as above, what is the value of  𝑜1  (accurate to at least three decimal places if responding numerically) in the following three cases?
+
+Assuming that  𝑓(𝑧1)+𝑓(𝑧2)+𝑓(𝑧3)+𝑓(𝑧4)=1 :
+
+Answer = o1 - 
+
+Assuming that  𝑓(𝑧1)+𝑓(𝑧2)+𝑓(𝑧3)+𝑓(𝑧4)=0 :
+
+Answer = o1 = 
+
+Assuming that  𝑓(𝑧1)+𝑓(𝑧2)+𝑓(𝑧3)+𝑓(𝑧4)=3 :
+
+Answer = o1 =
+
+### Inverse Temperature
+
+Now, suppose we modify the network's softmax function as follows:
+
+ 	 𝑜1 	 =𝑒𝛽𝑓(𝑢1)𝑒𝛽𝑓(𝑢1)+𝑒𝛽𝑓(𝑢2) 	 	 
+ 	 𝑜2 	 =𝑒𝛽𝑓(𝑢2)𝑒𝛽𝑓(𝑢1)+𝑒𝛽𝑓(𝑢2), 	 	 
+where  𝛽>0  is a parameter. Note that our previous setting corresponded to the special case  𝛽=1 .
+In the following, please write a numerical solution with an accuracy of at least 3 places.
+For  𝛽=1 , in order to satisfy  𝑜2≥11000 , the value of  𝑓(𝑢1)−𝑓(𝑢2)  should be smaller or equal than:
+
+Answer = 6.906
+
+If we increase the value to  𝛽=3 , in order to satisfy  𝑜2≥11000 , the value of  𝑓(𝑢1)−𝑓(𝑢2)  should be smaller or equal than:
+
+Answer = 2.302
+
+In general, in order to satisfy  𝑜2≥11000 , increasing the value of  𝛽  can result in  𝑓(𝑢1)−𝑓(𝑢2)  being:
+
+Answer = Smaller
+
+
+
+  
