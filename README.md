@@ -34,6 +34,10 @@
   * [Project 3: Digit recognition (Part 2)](https://github.com/369geofreeman/MITx-6.86x-Machine-Learning-with-Python/tree/master/week_4/project_3)
 
 
+### [Unit Four]((https://github.com/369geofreeman/MITx-6.86x-Machine-Learning-with-Python/tree/master/week_5) Unit 4: Unsupervised Learning
+  * [Lecture 13. Clustering 1]()
+
+
 
 ## Notes (cmd+f cheatsheet)
 
