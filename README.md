@@ -38,7 +38,7 @@
   * [Lecture 13. Clustering 1](https://github.com/369geofreeman/MITx-6.86x-Machine-Learning-with-Python/tree/master/week_5/lecture_13)
   * [Lecture 14. Clustering 2](https://github.com/369geofreeman/MITx-6.86x-Machine-Learning-with-Python/tree/master/week_5/lecture_14)
   * [Lecture 15. Generative Models](https://github.com/369geofreeman/MITx-6.86x-Machine-Learning-with-Python/tree/master/week_5/lecture_15)
-
+  * [Lecture 16. Mixture Models; EM algorithm](https://github.com/369geofreeman/MITx-6.86x-Machine-Learning-with-Python/tree/master/week_5/lecture_15)
 
 
 ## Notes (cmd+f cheatsheet)
