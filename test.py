@@ -1,20 +1,71 @@
-# Tests
+# =============================================== #
+# === Google FooBar challenge Level 2, part 1 === #
+# =============================================== #
 
-from scipy.special import binom
+# Hey, I Already Did That!
+# ========================
+# 
+# Commander Lambda uses an automated algorithm to assign minions randomly to tasks, in order to keep her minions on their toes. But you've noticed a flaw in the algorithm - it eventually loops back on itself, so that instead of assigning new minions as it iterates, it gets stuck in a cycle of values so that the same minions end up doing the same tasks over and over again. You think proving this to Commander Lambda will help you make a case for your next promotion. 
+# 
+# You have worked out that the algorithm has the following process: 
+# 
+# 1) Start with a random minion ID n, which is a nonnegative integer of length k in base b
+# 2) Define x and y as integers of length k.  x has the digits of n in descending order, and y has the digits of n in ascending order
+# 3) Define z = x - y.  Add leading zeros to z to maintain length k if necessary
+# 4) Assign n = z to get the next minion ID, and go back to step 2
+# 
+# For example, given minion ID n = 1211, k = 4, b = 10, then x = 2111, y = 1112 and z = 2111 - 1112 = 0999. Then the next minion ID will be n = 0999 and the algorithm iterates again: x = 9990, y = 0999 and z = 9990 - 0999 = 8991, and so on.
+# 
+# Depending on the values of n, k (derived from n), and b, at some point the algorithm reaches a cycle, such as by reaching a constant value. For example, starting with n = 210022, k = 6, b = 3, the algorithm will reach the cycle of values [210111, 122221, 102212] and it will stay in this cycle no matter how many times it continues iterating. Starting with n = 1211, the routine will reach the integer 6174, and since 7641 - 1467 is 6174, it will stay as that value no matter how many times it iterates.
+# 
+# Given a minion ID as a string n representing a nonnegative integer of length k in base b, where 2 <= k <= 9 and 2 <= b <= 10, write a function solution(n, b) which returns the length of the ending cycle of the algorithm above starting with n. For instance, in the example above, solution(210022, 3) would return 3, since iterating on 102212 would return to 210111 when done in base 3. If the algorithm reaches a constant, such as 0, then the length is 1.
 
-def multinomial(params):
-    if len(params) == 1:
+
+
+def solution(n, b):
+    k = len(n)
+    results = []
+    try:
+        while n:
+            y = ''.join(sorted(n))
+            x = y[::-1]
+            z = _base_converter(int(x, b)-int(y, b), b)
+            if len(z) != k:
+                z = '0'*(k-len(z)) + z
+            if z in results:
+                return len(results[results.index(z):])
+            results.append(z)
+            n = z
+    except 'sds':
         return 1
-    return binom(sum(params), params[-1]) * multinomial(params[:-1])
 
 
-print(multinomial([12,3]))
+def _base_converter(n, b):
+    '''
+    Returns a string, n
+    converted to base, b
+    '''
+    s = ""
+    while n:
+        s = str(n % b) + s
+        n //= b
+    return s
 
 
+print(solution('210022', 3))
 
 
-# 2|3|5|7|11|13|17|19|23|29|31|37|41|43|47|53|59|61|67|71|73|79|83|89|97|101|103|107|109|113|127|131|137|139|149|151|157|163|167|173|179|181|191|193|197|199|211|223|227|229|233|239|241|251|257|263|269|271|277|281|283|293|307|311|313|317|331|337|347|349|353|359|367|373|379|383|389|397|401|409|419|421|431|433|439|443|449|457|461|463|467|479|487|491|499|503|509|521|523|541|547|557|563|569|571|577|587|593|599|601|607|613|617|619|631|641|643|647|653|659|661|673|677|683|691|701|709|719|727|733|739|743|751|757|761|769|773|787|797|809|811|821|823|827|829|839|853|857|859|863|877|881|883|887|907|911|919|929|937|941|947|953|967|971|977|983|991|997|1009|1013|1019|1021|1031|1033|1039|1049|1051|1061|1063|1069|1087|1091|1093|1097|1103|1109|1117|1123|1129|1151|1153|1163|1171|1181|1187|1193|1201|1213|1217|1223|1229|1231|1237|1249|1259|1277|1279|1283|1289|1291|1297|1301|1303|1307|1319|1321|1327|1361|1367|1373|1381|1399|1409|1423|1427|1429|1433|1439|1447|1451|1453|1459|1471|1481|1483|1487|1489|1493|1499|1511|
+# === test cases === #
 
+# Input:
+# solution.solution('1211', 10)
+# Output:
+#     1
+# 
+# Input:
+# solution.solution('210022', 3)
+# Output:
+#    3
 
 
 
