@@ -43,6 +43,10 @@
   * [Project 4: Collaborative Filtering via Gaussian Mixtures](https://github.com/369geofreeman/MITx-6.86x-Machine-Learning-with-Python/tree/master/week_5/project)
 
 
+### [Unit Five]() Unit 5: Reinforcement Learning
+  * [Lecture 17: Reinforcement Learning 1]()
+
+
 ## Notes (cmd+f cheatsheet)
 
 ### Contents
