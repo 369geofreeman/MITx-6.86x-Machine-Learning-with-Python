@@ -47,6 +47,8 @@
   * [Lecture 17: Reinforcement Learning 1](https://github.com/369geofreeman/MITx-6.86x-Machine-Learning-with-Python/tree/master/week_6/lecture_17)
   * [Lecture 18: Reinforcement Learning 2](https://github.com/369geofreeman/MITx-6.86x-Machine-Learning-with-Python/tree/master/week_6/lecture_18)
   * [Lecture 19: Applications: Natural Language Processing](https://github.com/369geofreeman/MITx-6.86x-Machine-Learning-with-Python/tree/master/week_6/lecture_19)
+  * [Homework](https://github.com/369geofreeman/MITx-6.86x-Machine-Learning-with-Python/tree/master/week_6/hw)
+
 
 
 ## Notes (cmd+f cheatsheet)
